@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<aiml>
+
+    <category>
+        <pattern>*</pattern>
+        <template>I do not have an answer for that</template>
+    </category>
+
+    <category>
+        <pattern>_ IS</pattern>
+        <template><sr/></template>
+    </category>
+
+    <category>
+        <pattern>_ PLEASE</pattern>
+        <template><sr/></template>
+    </category>
+
+    <category>
+        <pattern>_ CHATTER</pattern>
+        <template><sr/></template>
+    </category>
+    
+
+    <category>
+        <pattern>What is  ^</pattern>
+        <template>
+            <think>
+                <set name="What">
+                    <star></star>
+                </set>
+            </think>
+            <condition name="What" value="the population of Bristol">
+                The population of Bristol is about 430000
+            </condition>
+
+            <condition name="What" value="the population of Bath">
+                The population of Bath is about 84000
+            </condition>
+
+            <condition name="What" value="UWE">
+                I do not have an answer for that
+            </condition>
+
+            <condition name="What" value="Bristol">
+                Bristol is a city.
+            </condition>
+
+            <condition name="What" value="beauty">
+                A subjective judgment evoked by an emotional response
+            </condition>
+
+            <condition name="What" value="London">
+                London is a city.
+            </condition>
+
+            <condition name="What" value="the population of London">
+                The population of London is about 8.6 million
+            </condition>
+
+        </template>
+    </category>
+
+
+
+    <category>
+        <pattern>How many people live in ^</pattern>
+        <template>
+            <think>
+                <set name="How">
+                    <star></star>
+                </set>
+            </think>
+            <condition name="How" value="Bristol">
+                The population of Bristol is about 430000
+            </condition>
+
+            <condition name="How" value="Bath">
+                The population of Bath is about 84000
+            </condition>
+
+            <condition name="How" value="Keynsham">
+                I do not know what the population of Keynsham is
+            </condition>
+
+            <condition name="How" value="space">
+                I do not know what the population of space is
+            </condition>
+
+        </template>
+    </category>
+
+
+
+    <category>
+	    <pattern>Why not</pattern>
+	    <that>*</that>
+        <template>
+            <think>
+            <set name="Why"><thatstar/></set>
+            </think>
+            <condition name="Why" value="I do not know what the population of Keynsham is">
+				Because it is too hard to count the residents of Keynsham
+            </condition>
+
+            <condition name="Why" value="I do not know what the population of space is">
+				Because it is too hard to count the residents of space
+            </condition>
+
+			<condition name = "Why" value = "In the eye of the beholder">
+				I do not have an answer for that
+            </condition>
+
+			<condition name = "Why" value = "I do not know where Keynsham is">
+				Because I do not have a category to connect me to a mapping service
+            </condition>
+
+         </template>
+    </category>
+
+    <category>
+	    <pattern>WHERE IS IT</pattern>
+	    <that>* IS A CITY</that>
+        <template>
+            <think>
+            <set name="Where"><thatstar/></set>
+            </think>
+            <condition name="Where" value="Bristol">
+		In the South-West of the U.K.
+            </condition>
+
+            <condition name="Where" value="London">
+		Roughly half-way between Hatfield and Severnoaks
+            </condition>
+			
+         </template>
+    </category>
+
+    <category>
+        <pattern>* Bristol</pattern>
+        <template>In the South-West of the U.K.</template>
+    </category>
+    
+    <category>
+        <pattern>* London</pattern>
+        <template>Roughly half-way between Hatfield and Severnoaks</template>
+    </category>
+    <category>
+        <pattern>* beauty</pattern>
+        <template>In the eye of the beholder</template>
+    </category>
+    
+    <category>
+        <pattern>* Bath</pattern>
+        <template>In Somerset</template>
+    </category>
+    
+    <category>
+        <pattern>* UWE</pattern>
+        <template>In north Bristol</template>
+    </category>
+
+    <category>
+        <pattern>Where is Keynsham</pattern>
+        <template>I do not know where Keynsham is</template>
+    </category> 
+
+    <category>
+        <pattern>Is Bath in Bristol</pattern>
+        <template>I do not have an answer for that</template>
+    </category>
+
+
+</aiml>
